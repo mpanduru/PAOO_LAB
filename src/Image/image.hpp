@@ -1,6 +1,8 @@
 #ifndef IMAGE_HPP
 #define IMAGE_HPP
 
+namespace ImageNamespace {
+
 class Image {
 private:
     char* name;
@@ -35,5 +37,7 @@ public:
     void printInfo();
 
 };
+
+}
 
 #endif

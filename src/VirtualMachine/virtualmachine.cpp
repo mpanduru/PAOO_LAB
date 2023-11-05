@@ -2,6 +2,8 @@
 #include <cstring>
 #include "virtualmachine.hpp"
 
+namespace VirtualNamespace {
+
 VirtualMachine::VirtualMachine(const char* virtualMachineName, const char* virtualMachineImageOS,
                 int virtualMachineStorage, int virtualMachineMemory): storage(virtualMachineStorage), memory(virtualMachineMemory){
     name = new char[strlen(virtualMachineName) + 1];
@@ -87,4 +89,6 @@ void VirtualMachine::start() {
 
 void VirtualMachine::printInfo() {
     std::cout << "Virtual machine name: " << name << " imageOS: " << imageOS << " storage(GB): " << storage << " memory(MB): " << memory << std::endl;
+}
+
 }

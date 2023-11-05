@@ -2,6 +2,9 @@
 #include <cstring>
 #include "container.hpp"
 #include "image.hpp"
+using namespace ImageNamespace;
+
+namespace VirtualNamespace {
 
 Container::Container(Image containerImage, const char* containerTag, int containerSize): size(containerSize) {
     image = containerImage;
@@ -83,4 +86,6 @@ void Container::start() {
 
 void Container::printInfo() {
     std::cout << "Image: " << image.getName() << " Tag: " << tag << " Size (GB): " << size << std::endl;
+}
+
 }

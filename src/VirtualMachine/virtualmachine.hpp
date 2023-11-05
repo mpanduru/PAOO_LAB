@@ -3,6 +3,8 @@
 
 #include "virtualcomponent.hpp"
 
+namespace VirtualNamespace {
+
 class VirtualMachine : public VirtualComponent {
 private:
     char* name;
@@ -42,5 +44,7 @@ public:
     void printInfo();
 
 };
+
+}
 
 #endif

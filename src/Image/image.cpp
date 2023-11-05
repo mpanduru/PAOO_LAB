@@ -2,6 +2,8 @@
 #include <cstring>
 #include "image.hpp"
 
+namespace ImageNamespace {
+
 Image::Image(const char* imageName, const char* imageRepository, int imageSize): size(imageSize){
     name = new char[strlen(imageName) + 1];
     strcpy(name, imageName);
@@ -80,4 +82,6 @@ void Image::setSize(int imageSize){
 
 void Image::printInfo(){
     std::cout << "Repository: " << repository << " Name: " << name << " Size (MB): " << size << std::endl;
+}
+
 }

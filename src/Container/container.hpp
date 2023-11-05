@@ -3,6 +3,9 @@
 
 #include "image.hpp"
 #include "virtualcomponent.hpp"
+using namespace ImageNamespace;
+
+namespace VirtualNamespace {
 
 class Container : public VirtualComponent {
 private:
@@ -40,5 +43,7 @@ public:
     void printInfo();
 
 };
+
+}
 
 #endif
