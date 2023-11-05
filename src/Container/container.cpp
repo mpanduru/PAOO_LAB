@@ -13,6 +13,7 @@ Container::Container(Image containerImage, const char* containerTag, int contain
 Container::Container(): tag(NULL), size(0), image(Image()) {}
 
 Container::Container(const Container& container): size(container.size) {
+    std::cout << "copy constructor aici" << std::endl;
     image = container.image;
     tag = new char[strlen(container.tag) + 1];
     strcpy(tag, container.tag);
@@ -23,6 +24,7 @@ Container::~Container() {
 }
 
 Container& Container::operator=(const Container& other) {
+    std::cout << "assignment operator aici" << std::endl;
     image = other.image;
     size = other.size;
 
