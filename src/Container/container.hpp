@@ -21,6 +21,8 @@ public:
 
     Container& operator=(const Container& other);
 
+    Container(Container&& container);
+
     Image getImage();
 
     char* getTag();

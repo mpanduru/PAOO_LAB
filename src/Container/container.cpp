@@ -20,6 +20,7 @@ Container::Container(const Container& container): size(container.size) {
 }
 
 Container::~Container() {
+    std::cout << "destructor super aici " << std::endl;
     delete []tag;
 }
 
@@ -34,6 +35,16 @@ Container& Container::operator=(const Container& other) {
     return *this;
 }
 
+Container::Container(Container&& container) {
+    Image movedImage(std::move(container.image));
+    image = movedImage;
+    tag = container.tag;
+    size = container.size;
+
+    container.tag = NULL;
+    container.size = 0;
+    std::cout << "move constructor container" << std::endl;
+}
 
 Image Container::getImage() {
     return image;

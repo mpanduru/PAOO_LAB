@@ -18,6 +18,8 @@ public:
 
     Image& operator=(const Image& other);
 
+    Image(Image&& container);
+
     char* getName();
 
     char* getRepository();

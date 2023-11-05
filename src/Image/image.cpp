@@ -33,6 +33,17 @@ Image& Image::operator=(const Image& other){
     return *this;
 }
 
+Image::Image(Image&& image) {
+    name = image.name;
+    repository = image.repository;
+    size = image.size;
+
+    image.name = NULL;
+    image.repository = NULL;
+    image.size = 0;
+    std::cout << "move in image" << std::endl;
+}
+
 char* Image::getName(){
     char* newName;
     newName = new char[strlen(name) + 1];
