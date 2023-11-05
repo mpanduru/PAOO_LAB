@@ -1,0 +1,2 @@
+add_library(VirtualComponentLibrary INTERFACE)
+target_include_directories(VirtualComponentLibrary INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

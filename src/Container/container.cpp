@@ -65,6 +65,11 @@ void Container::setSize(int containerSize) {
     size = containerSize;
 }
 
+void Container::start() {
+    std::cout << "Container started: ";
+    this->printInfo();
+}
+
 void Container::printInfo() {
     std::cout << "Image: " << image.getName() << " Tag: " << tag << " Size (GB): " << size << std::endl;
 }

@@ -2,8 +2,9 @@
 #define CONTAINER_HPP
 
 #include "image.hpp"
+#include "virtualcomponent.hpp"
 
-class Container {
+class Container : public VirtualComponent {
 private:
     Image image;
     char* tag;
@@ -31,6 +32,8 @@ public:
     void setTag(const char* containerTag);
 
     void setSize(int containerSize);
+
+    void start();
 
     void printInfo();
 
