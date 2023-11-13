@@ -1,13 +1,16 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.0)
 
-project(Tema1 VERSION 1.0)
+project(Tema1)
 
-add_subdirectory(./src/Image)
-add_subdirectory(./src/Container)
-add_subdirectory(./src/VirtualComponent)
-add_subdirectory(./src/VirtualMachine)
-add_subdirectory(./src/DockerContainer)
+# Specify the required C++ standard
+if(CMAKE_VERSION GREATER "3.1.2") 
+    set(CMAKE_CXX_STANDARD 14)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    set(CMAKE_CXX_EXTENSIONS OFF)
+else()
+    if(CMAKE_COMPILER_IS_GNUCXX)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+    endif()    
+endif()
 
-add_executable(Tema1 src/main.cpp)
-
-target_link_libraries(Tema1 ContainerLibrary VirtualMachineLibrary DockerContainerLibrary)
+include(${CMAKE_CURRENT_SOURCE_DIR}/src/CMakeLists.txt)

@@ -2,7 +2,6 @@
 #include <cstring>
 #include "dockercontainer.hpp"
 #include "image.hpp"
-using namespace ImageNamespace;
 
 namespace VirtualNamespace {
 

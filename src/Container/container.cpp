@@ -2,7 +2,6 @@
 #include <cstring>
 #include "container.hpp"
 #include "image.hpp"
-using namespace ImageNamespace;
 
 namespace VirtualNamespace {
 

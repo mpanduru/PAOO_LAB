@@ -4,8 +4,6 @@
 #include "image.hpp"
 #include "container.hpp"
 
-using namespace ImageNamespace;
-
 namespace VirtualNamespace {
 
 class DockerContainer : public Container {

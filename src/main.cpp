@@ -6,7 +6,6 @@
 #include "virtualcomponent.hpp"
 
 using namespace VirtualNamespace;
-using namespace ImageNamespace;
 
 int main(int argc, char* argv[]) {
     std::cout << "Creare imagini.." << std::endl;

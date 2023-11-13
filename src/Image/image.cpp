@@ -2,7 +2,7 @@
 #include <cstring>
 #include "image.hpp"
 
-namespace ImageNamespace {
+namespace VirtualNamespace {
 
 Image::Image(const char* imageName, const char* imageRepository, int imageSize): size(imageSize){
     name = new char[strlen(imageName) + 1];

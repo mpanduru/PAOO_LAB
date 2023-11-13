@@ -1,7 +1,7 @@
 #ifndef IMAGE_HPP
 #define IMAGE_HPP
 
-namespace ImageNamespace {
+namespace VirtualNamespace {
 
 class Image {
 private:
