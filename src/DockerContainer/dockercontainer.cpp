@@ -5,7 +5,7 @@
 
 namespace VirtualNamespace {
 
-DockerContainer::DockerContainer(Image containerImage, const char* containerTag, int containerSize): Container(containerImage, containerTag, containerSize){
+DockerContainer::DockerContainer(Image containerImage, const char* containerTag, int containerSize, int containerData): Container(containerImage, containerTag, containerSize, containerData){
 }
 
 DockerContainer::DockerContainer(): Container(){}

@@ -6,9 +6,9 @@
 
 namespace VirtualNamespace {
 
-class DockerContainer : public Container {
+class DockerContainer : public Container<int> {
 public:
-    DockerContainer(Image containerImage, const char* containerTag, int containerSize);
+    DockerContainer(Image containerImage, const char* containerTag, int containerSize, int containerData);
     DockerContainer();
     void deployToSwarm(const char* serviceName, int replicaCount);
 };

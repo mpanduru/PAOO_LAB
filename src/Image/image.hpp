@@ -34,6 +34,10 @@ public:
 
     void setSize(int imageSize);
 
+    template <typename U> void processData(U data){
+        std::cout << "Image " << name << " processed data: " << data << std::endl;
+    }
+
     void printInfo();
 
 };

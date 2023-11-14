@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "container.hpp"
 #include "image.hpp"
 #include "virtualmachine.hpp"
@@ -49,14 +50,35 @@ int main(int argc, char* argv[]) {
     // DockerContainer dockercontainer2(std::move(dockercontainer1));
     // dockercontainer2.printInfo();
 
-    VirtualMachine vm1("vm1", "windows", 50, 8192);
-    VirtualMachine vm2("vm2", "ubuntu", 40, 4096);
+    std::shared_ptr<VirtualMachine> vm1 = std::make_shared<VirtualMachine>("vm1", "windows", 50, 8192);
+    std::shared_ptr<VirtualMachine> vm2 = std::make_shared<VirtualMachine>("vm2", "ubuntu", 40, 4096);
+    std::shared_ptr<VirtualMachine> vm3 = std::make_shared<VirtualMachine>("vm3", "centos", 45, 4096);
+    
+    std::unique_ptr<System> mySystem = std::make_unique<System>();
+    mySystem->addComponent(vm1);
+    mySystem->addComponent(vm2);
 
-    System mySystem;
-    mySystem.addComponent(&vm1);
-    mySystem.addComponent(&vm2);
+    mySystem->startAllComponents();
+    mySystem->printComponents();
 
-    mySystem.startAllComponents();
-    mySystem.printComponents();
+    std::unique_ptr<System> backupSystem;
+    backupSystem = move(mySystem);
+    backupSystem->addComponent(vm3);
+    backupSystem->printComponents();
+
+    std::unique_ptr<System> remoteSystem = std::make_unique<System>();
+    remoteSystem->addComponent(vm1);
+    remoteSystem->printComponents();
+
+    std::cout << "Template examples" << std::endl;
+    Image ubuntuImage("Ubuntu", "ubuntu", 65);
+    int intData = 42;
+    double doubleData = 3.14;
+    
+    ubuntuImage.processData(intData);
+    ubuntuImage.processData(doubleData);
+
+    Container<double> container1(ubuntuImage, "latest", 300, doubleData);
+    std::cout << container1.getContainerData() << std::endl;
     return 0;
 }

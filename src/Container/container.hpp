@@ -6,14 +6,16 @@
 
 namespace VirtualNamespace {
 
+template <typename T> 
 class Container : public VirtualComponent {
 private:
     Image image;
     char* tag;
     int size;
+    T containerData;
 
 public:
-    Container(Image containerImage, const char* containerTag, int containerSize);
+    Container(Image containerImage, const char* containerTag, int containerSize, T containerData);
 
     Container();
 
@@ -30,6 +32,10 @@ public:
     char* getTag();
 
     int getSize();
+
+    T getContainerData();
+    
+    void setContainerData(T data);
 
     void setImage(Image containerImage);
 

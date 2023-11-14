@@ -2,22 +2,23 @@
 #define SYSTEM_HPP
 
 #include<vector>
+#include<memory>
 #include "virtualcomponent.hpp"
 
 namespace VirtualNamespace {
 
 class System {
 private:
-    std::vector<VirtualComponent*> virtualComponents;
+    std::vector<std::shared_ptr<VirtualComponent>> virtualComponents;
 
 public:
-    System(const std::vector<VirtualComponent*>& initialComponents);
+    System(const std::vector<std::shared_ptr<VirtualComponent>>& initialComponents);
 
     System();
 
     ~System();
 
-    void addComponent(VirtualComponent* component);
+    void addComponent(std::shared_ptr<VirtualComponent> component);
 
     void startAllComponents();
 
